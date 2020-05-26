@@ -1,11 +1,23 @@
 import React from 'react';
 import './App.css';
-import { useFirebaseApp } from 'reactfire';
+import { useUser } from 'reactfire';
+
+import Auth from './components/auth/Auth';
 
 function App() {
-  const firebase = useFirebaseApp();
-  console.log(firebase);
-  return <div className="App">Configuracion</div>;
+  const user = useUser();
+
+  return (
+    <div className="App">
+      {user && (
+        <p>
+          Usuario:
+          {user.email}
+        </p>
+      )}
+      <Auth />
+    </div>
+  );
 }
 
 export default App;
