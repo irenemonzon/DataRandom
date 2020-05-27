@@ -1,22 +1,19 @@
 import React from 'react';
 import './App.css';
-import { useUser } from 'reactfire';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Auth from './components/auth/Auth';
 
-function App() {
-  const user = useUser();
+// import Listuser from './components/Listusers';
 
+function App() {
   return (
-    <div className="App">
-      {user && (
-        <p>
-          Usuario:
-          {user.email}
-        </p>
-      )}
-      <Auth />
-    </div>
+    <Router>
+      <div className="container">
+        <Route exact path="/">
+          <Auth />
+        </Route>
+      </div>
+    </Router>
   );
 }
 

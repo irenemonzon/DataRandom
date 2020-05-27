@@ -6,12 +6,20 @@ export default function Getuser({ keyword = 10 } = {}) {
     .then(data => {
       const { results } = data;
       const users = results.map(element => {
-        const { large } = element.picture;
-        const { email, gender } = element;
+        const { medium } = element.picture;
+        const { gender, email, phone, cell } = element;
         const { title, first, last } = element.name;
         const { uuid } = element.login;
+        const { number, name } = element.location.street;
+        const { age } = element.dob;
+
         return {
-          large,
+          age,
+          number,
+          name,
+          phone,
+          cell,
+          medium,
           email,
           gender,
           title,
