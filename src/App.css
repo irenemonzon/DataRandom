@@ -5,12 +5,14 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
+
   background: linear-gradient(
     90deg,
     rgba(74, 25, 246, 1) 2%,
     rgba(74, 25, 246, 1) 100%
   );
 }
+
 h1 {
   color: white;
 }

@@ -82,10 +82,15 @@ const Auth = () => {
       {user && (
         <div className="container-user">
           <div className="title">
-            <p>{user.email}</p>
-            <button type="button" onClick={logout}>
+            <p>Usuario: {user.email}</p>
+            <Button
+              size="small"
+              variant="contained"
+              color="secondary"
+              onClick={logout}
+            >
               Cerrar Sesión
-            </button>
+            </Button>
           </div>
           <div className="user">
             <Listuser users={users} />
