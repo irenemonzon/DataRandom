@@ -2,7 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import 'firebase/firebase-auth';
 import { useFirebaseApp, useUser } from 'reactfire';
-import Listuser from '../Listusers';
+import {
+  FormControl,
+  InputLabel,
+  Input,
+  FormHelperText,
+  Button
+} from '@material-ui/core';
+
+import Listuser from '../views/Listusers';
 import Getuser from '../../services/Getuser';
 import './Auth.css';
 
@@ -32,34 +40,41 @@ const Auth = () => {
     Getuser().then(users => setUser(users));
   }, []);
 
-  // if (email === '' || password === '') {
-  // setError(true);
-  // }
-
   return (
     <div className="container-info">
       {!user && (
         <div className="container-login">
           <div className="info-login">
-            <p>Correo Electronico </p>
-            <input
-              type="email"
-              id="email"
-              onChange={event => setEmail(event.target.value)}
-            />
-            <p>Contraseña</p>
-            <input
-              type="password"
-              id="password"
-              onChange={event => setPassword(event.target.value)}
-            />
+            <FormControl>
+              <InputLabel htmlFor="email"> Correo Electrónico</InputLabel>
+              <Input
+                id="email"
+                type="email"
+                aria-describedby="email-helper"
+                onChange={event => setEmail(event.target.value)}
+              />
+              <FormHelperText id="email-helper">Tu email</FormHelperText>
+            </FormControl>
+
+            <FormControl>
+              <InputLabel htmlFor="pwd">Contraseña</InputLabel>
+              <Input
+                id="pwd"
+                type="password"
+                aria-describedby="pasword-helper"
+                onChange={event => setPassword(event.target.value)}
+              />
+              <FormHelperText id="password-helper">
+                Minimo 6 caracteres
+              </FormHelperText>
+            </FormControl>
             <div className="container-button">
-              <button type="button" onClick={register}>
+              <Button variant="contained" color="primary" onClick={register}>
                 Registrarse
-              </button>
-              <button type="button" onClick={login}>
+              </Button>
+              <Button variant="contained" color="primary" onClick={login}>
                 Iniciar Sesion
-              </button>
+              </Button>
             </div>
           </div>
         </div>

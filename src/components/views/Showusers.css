@@ -1,0 +1,16 @@
+.container-items {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(178, 231, 213);
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.items {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

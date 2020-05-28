@@ -1,6 +1,5 @@
 .container-card {
-  width: 90%;
-  background-color: rgb(184, 48, 71);
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -10,14 +9,24 @@
 }
 
 .card {
-  width: 40%;
-  background-color: rgb(48, 184, 138);
+  width: 38%;
+  height: 28vh;
+  background-color: rgb(178, 231, 213);
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
+
   margin-top: 10px;
 }
 .name-user {
   display: flex;
   text-align: center;
+}
+.button {
+  margin-right: 10px;
+  align-content: center;
+}
+.photo {
+  margin-top: 10px;
 }

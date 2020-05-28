@@ -18,8 +18,9 @@
   "rules": {
     "arrow-parens": "off",
     "comma-dangle": "off",
-    "implicit-arrow-linebreak": "off",
+    "no-shadow": "off",
+    "react/prop-types": "off",
     "object-curly-newline": "off",
-    "no-shadow": "off"
+    "react/jsx-one-expression-per-line": "off"
   }
 }

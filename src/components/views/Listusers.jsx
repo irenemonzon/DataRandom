@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Listuser.css';
 import Showuser from './Showusers';
-// import { Link } from 'react-router-dom';
 
 const Listuser = ({ users }) => {
   const [info, setInfo] = useState(false);
@@ -11,22 +10,24 @@ const Listuser = ({ users }) => {
     setInfo(true);
     setValue(users);
   };
-  /* if (info === true) {
+  if (info === true) {
     setTimeout(() => {
       setInfo(false);
-    }, 5000);
-  } */
+    }, 7000);
+  }
   return (
     <div className="container-card">
       {info ? (
-        <Showuser value={value} users={users} />
+        <Showuser value={value} />
       ) : (
         <div className="container-card">
           {users.map(users => (
             <div className="card" key={users.uuid}>
-              <button type="button" onClick={() => SendInfo(users)}>
-                <img alt="foto" src={users.medium} />
-              </button>
+              <div className="photo">
+                <button type="button" onClick={() => SendInfo(users)}>
+                  <img alt="foto" src={users.medium} />
+                </button>
+              </div>
               <div>
                 <h4 className="name-user">
                   {users.title} {users.first} {users.last}
